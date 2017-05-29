@@ -44,7 +44,7 @@ public class PlayerManagerTest {
         List<Player> myList8 = PlayerManager.readPlayers();
         Map<Integer, Integer> myMap8 = PlayerManager.groupByStrength8(myList8);
 
-        Assert.assertTrue(myList7.equals(myList8));
+        Assert.assertTrue(myMap7.equals(myMap8));
 
     }
 
