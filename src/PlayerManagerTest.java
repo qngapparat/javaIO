@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Map;
 
-//TODO test groupByStrength 7 and 8. What should be used as control group to the output of the functions to test? Yet another functions reading the file?
-
 /**
  * Created by qngapparat on 28.05.17.
  */
@@ -38,19 +36,17 @@ public class PlayerManagerTest {
     }
 
     @Test
-    public void groupByStrength7Test(){
+    public void groupByStrengthTest(){
 
-        List<Player> myList = PlayerManager.readPlayers();
-        Map<Integer, Integer> myMap = PlayerManager.groupByStrength7(myList);
+        List<Player> myList7 = PlayerManager.readPlayers();
+        Map<Integer, Integer> myMap7 = PlayerManager.groupByStrength7(myList7);
 
+        List<Player> myList8 = PlayerManager.readPlayers();
+        Map<Integer, Integer> myMap8 = PlayerManager.groupByStrength8(myList8);
 
-    }
-
-    @Test
-    public void groupByStrength8Test(){
-
-        List<Player> myList = PlayerManager.readPlayers();
-        Map<Integer, Integer> myMap = PlayerManager.groupByStrength8(myList);
+        Assert.assertTrue(myList7.equals(myList8));
 
     }
+
+
 }
